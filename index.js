@@ -291,5 +291,87 @@ const filtered = unfiltered
 
 console.log(filtered);
 
+// exercise 1 - count array function to count # of occurrences of a value in the array
+const defaultArray = [1, 2, 3, 4, 1, 1, 3, 1, 5];
+const count = countOccurrences(defaultArray, 1);
+console.log(count);
+
+function countOccurrences(array, searchElement) {
+    let count = 0;
+    for (let arrayElement of array)
+        if (arrayElement === searchElement)
+            count++;
+        return count;
+}
+
+// Functions
+// function declaration
+// hoisting is the process of moving function declarations to the top of the file
+// done automatically by the JS engine
+function walk() {
+    console.log('Walk');
+}
+walk();
+
+// function expression
+// defining function must precede calling the function if using the function expression syntax
+let run = function run() {
+    console.log('Run');
+};
+
+// assigning reference value of run to move variable
+let move = run;
+move();
+
+// rest operator - used when # of arguments to be passed to a function can be anything/undefined
+function sumTotal(...args) {
+    return args.reduce((a, b) => a+ b);
+};
+
+console.log(sumTotal(1, 2, 3, 4, 5, 6));
+
+// defining getter and setter methods inside an object
+// getters to access properties of an object
+// setters to change property values of an object
+
+// try catch methods to include error handling in code. Note: Error is a default JS object that can be "thrown"
+
+const person2 = { 
+    firstName: 'Arjun',
+    lastName: 'Shah',
+    get fullName() {
+        return `${person2.firstName} ${person2.lastName}`;
+    }, 
+    set fullName(value) {
+        if (typeof value !== 'string')
+            throw new Error('Please enter a string');
+
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+};
+try {
+    person2.fullName = 'Annie DiRocco';
+}
+catch(e) {
+    alert(e)
+}
+
+console.log(person2.fullName);
+
+// global vs local variables - avoid defining global variables, local variables take precedent
+// do not use var to define variables (use let instead) because it does not respect variable scope
+// THIS is a keyword representing the object currently executing the function
+
+let circleObject = {
+    radius: 0,
+    area: 1
+};
+
+console.log(circleObject);
+
+
+
 
 
