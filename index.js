@@ -233,3 +233,63 @@ const address = {
 for (let key in address) 
     console.log(key, address[key]);
 
+// Arrays
+// Adding elements
+const myArray = [3, 4];
+
+// myArray.unshift('a', 'b'); // Shift function to insert elements at the beginning of the array
+myArray.splice(2, 0, 'Hello'); // Splice function to insert elements at a specific index of the array
+console.log(myArray);
+
+// use includes to find elements in an array
+console.log(myArray.includes(3));
+
+// define arrays that store reference types/objects
+const objArray = [
+    { id: 1, name: 'Arjun'},
+    { id: 2, name: 'Annie'},
+    { id: 3, name: 'Nans'},
+];
+
+// using predicate functions to find reference type values in array - this is weird
+const arrayResult = objArray.find(arrayResult => arrayResult.name === 'Nans');
+console.log(arrayResult);
+
+// to empty an array, set the length of the array to zero provided that array isn't referenced
+
+// combining 2 arrays
+const a = [1, 2, 3];
+const b = [4, 5, 6];
+
+const combined = [...a, ...b]; // using spread method to combine arrays a & b - can also use concat method
+console.log(combined);
+
+// iterating over elements inside an array - can also use a for of loop
+a.forEach((aIndex, aParam) => console.log(aIndex, aParam));
+
+// sorting an array
+const courses = [
+    { id: 1, name: 'English'},
+    { id: 2, name: 'Hindi'},
+];
+
+courses.sort(function(courseA, courseB) {
+    if (courseA < courseB) return -1;
+    if (courseA > courseB) return 1;
+    return 0;
+});
+
+console.log(courses);
+
+// filtering and mapping an array
+const unfiltered = [-1, 3, 21, -2, 4, 6, 0, -5];
+
+// chaining methods together to reduce code verbosity
+const filtered = unfiltered
+    .filter(n => n >= 0) // filtering array to select elements with value greater than or equal to 0
+    .map(n => '<li>' + n + '</li>'); // mapping to string type with HTML list tags
+
+console.log(filtered);
+
+
+
