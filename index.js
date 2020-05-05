@@ -237,8 +237,8 @@ for (let key in address)
 // Adding elements
 const myArray = [3, 4];
 
-// myArray.unshift('a', 'b'); // Shift function to insert elements at the beginning of the array
-myArray.splice(2, 0, 'Hello'); // Splice function to insert elements at a specific index of the array
+// myArray.unshift('a', 'b'); // Shift method to insert elements at the beginning of the array
+myArray.splice(2, 0, 'Hello'); // Splice method to insert elements at a specific index of the array
 console.log(myArray);
 
 // use includes to find elements in an array
@@ -251,7 +251,7 @@ const objArray = [
     { id: 3, name: 'Nans'},
 ];
 
-// using predicate functions to find reference type values in array - this is weird
+// passing call back methods to find property values in array of objects - I did not grasp call-back methods
 const arrayResult = objArray.find(arrayResult => arrayResult.name === 'Nans');
 console.log(arrayResult);
 
@@ -291,7 +291,7 @@ const filtered = unfiltered
 
 console.log(filtered);
 
-// exercise 1 - count array function to count # of occurrences of a value in the array
+// exercise 1 - define a function to count # of occurrences of a value in an array
 const defaultArray = [1, 2, 3, 4, 1, 1, 3, 1, 5];
 const count = countOccurrences(defaultArray, 1);
 console.log(count);
