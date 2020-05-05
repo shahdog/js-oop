@@ -5,6 +5,6 @@ export class CircleModule {
     }
 
     draw() {
-        console.log('Circle with a Radius: ' + this.radiusn);
+        console.log('Circle with a Radius: ' + this.radius);
     }
 }
